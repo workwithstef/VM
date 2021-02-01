@@ -40,5 +40,10 @@ Said 'if' statement was syntax error, *sigh*.
 3. Code works fine via pc; something missing in VM? Interpreter perhaps?
 NEXT STEPS: 
 - DOUBLE CHECK PY-DB CONNECTION WITH SIMPLE SQL QUERY! query works.
-- TEST BY CREATING MINI FLASK APP 
+- TEST BY CREATING MINI FLASK APP. flask app works; renders add_book page successfully
 - LOOK INTO PYTHON INTERPRETERS/VENV & RUNNING PYTHON IN VM!
+
+SOLUTION:
+- Error was 'f-strings'. Only compatible with Python 3.6 upwards. 
+- python3 starts at 3.5.2 by default.
+- SOLVED by reverting to classic .format() method!!!
