@@ -1,16 +1,17 @@
 #!/bin/bash
 
 # update packages
-sudo apt update
+sudo apt-get update
 
-. ~/db/shhh.sh
+# set password as env variable
+. /home/vagrant/db/shhh.sh
 
-# install mysql server // PRESET prompted selections
+# PRESET prompted password selections 
+echo "mysql-server mysql-server/root_password password $MY_SQL" | sudo debconf-set-selections 
+echo "mysql-server mysql-server/root_password_again password $MY_SQL" | sudo debconf-set-selections
 
-echo "mysql-server mysql-server/root_password password {$MY_SQL}" | sudo debconf-set-selections 
-echo "mysql-server mysql-server/root_password_again password {$MY_SQL}" | sudo debconf-set-selections
-
-sudo apt install mysql-server -y
+# install mysql server
+sudo apt-get install mysql-server -y
 
 # start mysql
 sudo systemctl start mysql

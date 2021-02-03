@@ -20,6 +20,7 @@ sudo pip3 install Flask
 git clone https://github.com/workwithstef/bookstore.git
 
 ## add sed substitution to replace MSDBConnect 'host' variable as necessary
+sed -i "s/localhost/192.168.10.200/" ~/bookstore/py_db.py
 
 # install db connnector
 # pip install mysql-connector-python
