@@ -23,7 +23,13 @@ tables, ALL queries can be applied.
 Allows SELECT & CREATE queries to be applied to the 'action' table in 'games' database, by stefan@192.168.43.77.
 Password restricted access.
 
+Export/Import MySQL database:
 
+- exporting: `mysqldump -u root -p {database} > {filename.sql}`
+- importing: `mysql -u root -p {database} < {.sql file}`
+
+
+### HOW TO AUTOMATE EXPORT OF DB ???
 
 
 
