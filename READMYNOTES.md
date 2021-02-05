@@ -1,5 +1,7 @@
 # Migrating App/DB onto VM
 
+*(@workwithstef IF YOU'VE COME TO REVISE CHECK PROVISION FILES ;)... EVEN BETTER COMMAND-SPECIFIC DOCUMENTATION!)*
+
 - When running flask remember to specify host ip as the remote server ip. 
 By defualt, Flask hosts web app on localhost.
 E.g.
@@ -28,9 +30,16 @@ Export/Import MySQL database:
 - exporting: `mysqldump -u root -p {database} > {filename.sql}`
 - importing: `mysql -u root -p {database} < {.sql file}`
 
+Executing MySQL queries via bash:
+
+`mysql -u USER -pPASSWORD -e "SQL_QUERY"`
+*^"-p{PASSWORD}" enters password via command so useful in bash scripts; although not the most secure*
+
 
 ### HOW TO AUTOMATE EXPORT OF DB ???
 
+TO-DO:
+### EXPORT MYSQL FILE WITHIN DB VM |&| SEND TO HOST MACHINE
 
 
 

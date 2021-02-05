@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.22, for macos10.15 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.33, for Linux (x86_64)
 --
 -- Host: localhost    Database: books
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	5.7.33-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,14 +21,14 @@
 
 DROP TABLE IF EXISTS `library`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `library` (
-  `book_id` int NOT NULL AUTO_INCREMENT,
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
   `book_title` varchar(50) DEFAULT NULL,
   `book_author` varchar(50) DEFAULT NULL,
-  `year_published` int DEFAULT NULL,
+  `year_published` int(11) DEFAULT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `library` (
 
 LOCK TABLES `library` WRITE;
 /*!40000 ALTER TABLE `library` DISABLE KEYS */;
-INSERT INTO `library` VALUES (1,'My First Book','Stefan Okolo',2020),(2,'My First Book: The Sequel ','Stefan Okolo',2021),(3,'test3','test',2020),(4,'Harry Potter & the Philosipher\'s Stone','J.K. Rowling',1997),(5,'The Tiger Who Came To Tea','Judith Kerr',1968),(6,'The Subtle Way of Not Giving a F*ck','Leah Egbo',2020);
+INSERT INTO `library` VALUES (1,'test book - vagrant edition','stefan okolo',2021),(2,'Stefan\'s First Virtual Book','Stefan Okolo',2021);
 /*!40000 ALTER TABLE `library` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-01 15:52:59
+-- Dump completed on 2021-02-05  2:02:26
