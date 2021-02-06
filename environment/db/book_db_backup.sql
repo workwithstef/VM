@@ -28,7 +28,7 @@ CREATE TABLE `library` (
   `book_author` varchar(50) DEFAULT NULL,
   `year_published` int(11) DEFAULT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `library` (
 
 LOCK TABLES `library` WRITE;
 /*!40000 ALTER TABLE `library` DISABLE KEYS */;
-INSERT INTO `library` VALUES (1,'test book - vagrant edition','stefan okolo',2021),(2,'Stefan\'s First Virtual Book','Stefan Okolo',2021);
+INSERT INTO `library` VALUES (1,'test book - vagrant edition','stefan okolo',2021),(2,'Stefan\'s First Virtual Book','Stefan Okolo',2021),(3,'Test Book - The Sequel','Stefan Okolo',2022);
 /*!40000 ALTER TABLE `library` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-05  2:02:26
+-- Dump completed on 2021-02-05 18:05:59
