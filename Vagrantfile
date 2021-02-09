@@ -7,6 +7,14 @@
 # you're doing.
 Vagrant.configure("2") do |config|
 
+  config.vm.define "ansible" do |ansible|
+    
+    ansible.vm.box = "ubuntu/xenial64"
+    ansible.vm.network "private_network", ip:"192.168.10.88"
+    
+    ansible.vm.provision "shell", path: "environment/ansible/provision.sh"
+  end
+  
   config.vm.define "db" do |db|
 
     db.vm.box = "ubuntu/xenial64"

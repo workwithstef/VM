@@ -4,7 +4,8 @@
 
 - When running flask remember to specify host ip as the remote server ip. 
 By defualt, Flask hosts web app on localhost.
-E.g.
+
+E.g:
 
 `app.run(debug=True, host='<remote_server_ip>')`
 
@@ -33,13 +34,13 @@ Export/Import MySQL database:
 Executing MySQL queries via bash:
 
 `mysql -u USER -pPASSWORD -e "SQL_QUERY"`
-*^"-p{PASSWORD}" enters password via command so useful in bash scripts; although not the most secure*
+*"-p{PASSWORD}" enters password via command so useful in bash scripts; although not the most secure*
 
 
 ### HOW TO AUTOMATE EXPORT OF DB ???
 
 TO-DO:
-### EXPORT MYSQL FILE WITHIN DB VM |&| SEND TO HOST MACHINE
+-  EXPORT MYSQL FILE WITHIN DB VM |&| SEND TO HOST MACHINE
 
 
 
@@ -62,3 +63,22 @@ SOLUTION:
 - Error was 'f-strings'. Only compatible with Python 3.6 upwards. 
 - python3 starts at 3.5.2 by default.
 - SOLVED by reverting to classic .format() method!!!
+
+LEARNING CURVE: ALWAYS CHECK SOFTWARE VERSIONING. STANDARDISE VERSION ACROSS MACHINES.
+
+
+# Configuring Ansible Controller 
+
+
+Installing Ansible on Ubuntu VM:
+- Very simple just follow ansible documentation.
+
+Assigning nodes to control is done in /etc/ansible/hosts file.
+
+###########################
+TIP: You can execute commands in VM from localhost via ssh (see below)
+
+ SYNTAX: `ssh -i <path to key> <user>@<host_ip> <command>`
+- `ssh -i /Users/user/code/Website_Project/VM/.vagrant/machines/ansible/virtualbox/private_key vagrant@192.168.10.100 hostname`
+- This command would output the hostname --> ubuntu-xenial
+###########################
