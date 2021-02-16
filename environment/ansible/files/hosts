@@ -1,0 +1,6 @@
+[web]
+192.168.10.100 ansible_connection=ssh ansible_ssh_user=vagrant
+
+
+[db]
+192.168.10.200 ansible_connection=ssh ansible_ssh_user=vagrant
