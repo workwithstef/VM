@@ -1,4 +1,4 @@
-# -*- mode: ruby -*-
+\# -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
@@ -11,6 +11,8 @@ Vagrant.configure("2") do |config|
     
     ansible.vm.box = "ubuntu/xenial64"
     ansible.vm.network "private_network", ip:"192.168.10.88"
+    
+    ansible.vm.synced_folder "./environment/ansible/access/", "/home/ubuntu/access/"
     
     ansible.vm.provision "shell", path: "environment/ansible/provision.sh"
   end
