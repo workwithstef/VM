@@ -13,7 +13,8 @@ Vagrant.configure("2") do |config|
     ansible.vm.network "private_network", ip:"192.168.10.88"
     
     ansible.vm.synced_folder "./environment/ansible/access/", "/home/ubuntu/access/"
-    
+    ansible.vm.synced_folder "./environment/ansible/files/", "/home/ubuntu/files/"
+   
     ansible.vm.provision "shell", path: "environment/ansible/provision.sh"
   end
   

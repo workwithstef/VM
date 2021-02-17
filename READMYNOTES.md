@@ -82,3 +82,19 @@ TIP: You can execute commands in VM from localhost via ssh (see below)
 - `ssh -i /Users/user/code/Website_Project/VM/.vagrant/machines/ansible/virtualbox/private_key vagrant@192.168.10.100 hostname`
 - This command would output the hostname --> ubuntu-xenial
 ###########################
+
+# I GOT THE KEYS KEYS KEYS
+
+`ssh-keygen` - generates key pair for connecting via ssh (rsa key type by default)
+`ssh-copy-id` - used to send public key to remote server, allowing communication via ssh between host & remote servers
+
+"authorized_keys" - found in "~/.ssh/" directory; contains public keys which, in conjuction with private key, authorize ssh communication 
+"/etc/ssh/sshd_config" - ssh config file can be customized to control ssh access style; i.e. PasswordAuthentication, IdentitesOnly, etc
+
+
+############ BLOCKERS
+
+- Trying to connect to the app server via ansible server; want ssh connection type.
+FIX ATTEMPTS:
+1. Generated rsa key pair (ssh-keygen), tried to send public key across (ssh-copy-id), got "Permission denied (publickey)".
+
