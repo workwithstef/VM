@@ -9,12 +9,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "ansible" do |ansible|
     
-    ansible.vm.box = "ubuntu/xenial64"
+    ansible.vm.box = "ubuntu/bionic64"
     ansible.vm.network "private_network", ip:"192.168.10.88"
     
     ansible.vm.synced_folder "./environment/ansible/access/", "/home/ubuntu/access/"
     ansible.vm.synced_folder "./environment/ansible/files/", "/home/ubuntu/files/"
-   
+    ansible.vm.synced_folder "./environment/ansible/playbooks/", "/home/vagrant/playbooks/"
     ansible.vm.provision "shell", path: "environment/ansible/provision.sh"
   end
   
@@ -36,8 +36,8 @@ Vagrant.configure("2") do |config|
 
     app.vm.synced_folder "./environment/app/", "/home/vagrant/app/"
 #    app.hostsupdater.aliases = ["stefbooks.local"]
-
-    app.vm.provision "shell", path: "environment/app/provision.sh"
+ 
+    app.vm.provision "shell", path: "environment/app/provision_ansi.sh"
 
 
 

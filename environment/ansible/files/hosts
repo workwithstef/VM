@@ -1,6 +1,10 @@
 [web]
-192.168.10.100 ansible_connection=ssh ansible_ssh_user=vagrant
+192.168.10.100 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 
 
 [db]
 192.168.10.200 ansible_connection=ssh ansible_ssh_user=vagrant
+
+#This ensures ansible executes python commands with python3 not python2
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

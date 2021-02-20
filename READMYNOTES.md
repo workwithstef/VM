@@ -74,6 +74,7 @@ Installing Ansible on Ubuntu VM:
 - Very simple just follow ansible documentation.
 
 Assigning nodes to control is done in /etc/ansible/hosts file.
+Additional vars (ansible_ssh_user=user, ansible_ssh_pass=1234, etc) can be set in hosts file, to be executed when ansible runs
 
 ###########################
 TIP: You can execute commands in VM from localhost via ssh (see below)
@@ -81,7 +82,11 @@ TIP: You can execute commands in VM from localhost via ssh (see below)
  SYNTAX: `ssh -i <path to key> <user>@<host_ip> <command>`
 - `ssh -i /Users/user/code/Website_Project/VM/.vagrant/machines/ansible/virtualbox/private_key vagrant@192.168.10.100 hostname`
 - This command would output the hostname --> ubuntu-xenial
+
+`vagrant ssh-config` - shows the src path of tmp key pair 
 ###########################
+
+
 
 # I GOT THE KEYS KEYS KEYS
 
@@ -97,4 +102,10 @@ TIP: You can execute commands in VM from localhost via ssh (see below)
 - Trying to connect to the app server via ansible server; want ssh connection type.
 FIX ATTEMPTS:
 1. Generated rsa key pair (ssh-keygen), tried to send public key across (ssh-copy-id), got "Permission denied (publickey)".
+TEMP SOLUTION: PasswordAuthentication method. INSECURE METHOD, WILL RETURN TO MAKE MORE SECURE ON NEXT ITERATION
 
+
+# Playbooks
+
+
+'gather_facts' relies on Python, playbok will crash if not already installed. So turn it off.
